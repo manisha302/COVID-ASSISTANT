@@ -24,7 +24,7 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    int_features = [float(x) for x in request.form.values()]
+    int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     scaler=MinMaxScaler()
     x=scaler.fit_transform(x)
