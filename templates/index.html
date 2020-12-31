@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+<head>
+   <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Predicting Life Expectancy</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="gdp_per_capita" placeholder="gdp_per_capita" required="required" />
+        <input type="text" name="new_tests_smoothed_per_thousand" placeholder="new_tests_smoothed_per_thousand" required="required" />
+        <input type="text" name="population_density" placeholder="population_density" required="required" />
+        <input type="text" name="new_tests_per_thousand" placeholder="new_tests_per_thousand" required="required" />
+        <input type="text" name="total_tests_per_thousand" placeholder="total_tests_per_thousand" required="required" />
+        <input type="text" name="new_tests_smoothed" placeholder="new_tests_smoothed" required="required" /> 
+        <input type="text" name="tests_per_case" placeholder="tests_per_case" required="required" />
+        <input type="text" name="new_cases_smoothed_per_million" placeholder="new_cases_smoothed_per_million" required="required" />
+        <input type="text" name="new_cases_per_million" placeholder="new_cases_per_million" required="required" />
+        <input type="text" name="total_cases_per_million" placeholder="total_cases_per_million" required="required" />
+        <button type="Predict" class="btn btn-primary btn-block btn-large">Predict Life Expectancy</button>
+    </form>
+
+   <br>
+   <br>
+   {{ predicting_life_expectancy }}
+
+ </div>
+</body>
+</html>
